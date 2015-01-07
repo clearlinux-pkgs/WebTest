@@ -1,0 +1,12 @@
+# This file contains additional build requirements that did not get
+# picked up automatically. One name per line, no whitespace.
+nose
+coverage
+python-mock
+PasteDeploy
+WSGIProxy2
+pyquery
+six
+WebOb
+waitress
+beautifulsoup4
