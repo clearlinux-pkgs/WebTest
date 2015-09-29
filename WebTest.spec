@@ -4,7 +4,7 @@
 #
 Name     : WebTest
 Version  : 2.0.18
-Release  : 10
+Release  : 11
 URL      : https://pypi.python.org/packages/source/W/WebTest/WebTest-2.0.18.zip
 Source0  : https://pypi.python.org/packages/source/W/WebTest/WebTest-2.0.18.zip
 Summary  : Helper to test WSGI applications
