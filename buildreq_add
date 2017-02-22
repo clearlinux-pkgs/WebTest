@@ -10,3 +10,13 @@ six
 WebOb
 waitress
 beautifulsoup4
+nose-python
+coverage
+python-mock
+PasteDeploy-python
+WSGIProxy2
+pyquery
+six-python
+WebOb-python
+waitress-python
+beautifulsoup4-python
