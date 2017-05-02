@@ -4,7 +4,7 @@
 #
 Name     : WebTest
 Version  : 2.0.27
-Release  : 24
+Release  : 25
 URL      : http://pypi.debian.net/WebTest/WebTest-2.0.27.tar.gz
 Source0  : http://pypi.debian.net/WebTest/WebTest-2.0.27.tar.gz
 Summary  : Helper to test WSGI applications
