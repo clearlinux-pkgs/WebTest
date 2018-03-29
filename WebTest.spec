@@ -4,7 +4,7 @@
 #
 Name     : WebTest
 Version  : 2.0.29
-Release  : 36
+Release  : 37
 URL      : https://pypi.python.org/packages/94/de/8f94738be649997da99c47b104aa3c3984ecec51a1d8153ed09638253d56/WebTest-2.0.29.tar.gz
 Source0  : https://pypi.python.org/packages/94/de/8f94738be649997da99c47b104aa3c3984ecec51a1d8153ed09638253d56/WebTest-2.0.29.tar.gz
 Summary  : Helper to test WSGI applications
@@ -60,15 +60,6 @@ WebTest
         This provides convenient full-stack testing of applications written
         with any WSGI-compatible framework.
 
-%package legacypython
-Summary: legacypython components for the WebTest package.
-Group: Default
-Requires: python-core
-
-%description legacypython
-legacypython components for the WebTest package.
-
-
 %package python
 Summary: python components for the WebTest package.
 Group: Default
@@ -97,8 +88,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1519137564
-python2 setup.py build -b py2
+export SOURCE_DATE_EPOCH=1522283054
 python3 setup.py build -b py3
 
 %check
@@ -107,20 +97,14 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python3.6/site-packages python3 setup.py test
 %install
-export SOURCE_DATE_EPOCH=1519137564
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
-
-%files legacypython
-%defattr(-,root,root,-)
-/usr/lib/python2*/*
 
 %files python
 %defattr(-,root,root,-)
