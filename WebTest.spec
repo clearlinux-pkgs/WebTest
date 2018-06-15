@@ -38,7 +38,7 @@ BuildRequires : pluggy
 BuildRequires : py-python
 BuildRequires : pyquery
 BuildRequires : pytest
-BuildRequires : python-dev
+
 BuildRequires : python-mock
 BuildRequires : python3-dev
 BuildRequires : setuptools
