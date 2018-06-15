@@ -4,13 +4,14 @@
 #
 Name     : WebTest
 Version  : 2.0.29
-Release  : 40
+Release  : 41
 URL      : https://pypi.python.org/packages/94/de/8f94738be649997da99c47b104aa3c3984ecec51a1d8153ed09638253d56/WebTest-2.0.29.tar.gz
 Source0  : https://pypi.python.org/packages/94/de/8f94738be649997da99c47b104aa3c3984ecec51a1d8153ed09638253d56/WebTest-2.0.29.tar.gz
 Summary  : Helper to test WSGI applications
 Group    : Development/Tools
 License  : MIT
 Requires: WebTest-python3
+Requires: WebTest-license
 Requires: WebTest-python
 Requires: PasteDeploy
 Requires: WSGIProxy2
@@ -38,7 +39,6 @@ BuildRequires : pluggy
 BuildRequires : py-python
 BuildRequires : pyquery
 BuildRequires : pytest
-
 BuildRequires : python-mock
 BuildRequires : python3-dev
 BuildRequires : setuptools
@@ -59,6 +59,14 @@ WebTest
         
         This provides convenient full-stack testing of applications written
         with any WSGI-compatible framework.
+
+%package license
+Summary: license components for the WebTest package.
+Group: Default
+
+%description license
+license components for the WebTest package.
+
 
 %package python
 Summary: python components for the WebTest package.
@@ -88,7 +96,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1522283054
+export SOURCE_DATE_EPOCH=1529094649
 python3 setup.py build -b py3
 
 %check
@@ -98,6 +106,8 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python3.6/site-packages python3 setup.py test
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/WebTest
+cp docs/license.rst %{buildroot}/usr/share/doc/WebTest/docs_license.rst
 python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -105,6 +115,10 @@ echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
+
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/WebTest/docs_license.rst
 
 %files python
 %defattr(-,root,root,-)
