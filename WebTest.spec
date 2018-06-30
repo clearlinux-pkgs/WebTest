@@ -4,7 +4,7 @@
 #
 Name     : WebTest
 Version  : 2.0.29
-Release  : 43
+Release  : 44
 URL      : https://pypi.python.org/packages/94/de/8f94738be649997da99c47b104aa3c3984ecec51a1d8153ed09638253d56/WebTest-2.0.29.tar.gz
 Source0  : https://pypi.python.org/packages/94/de/8f94738be649997da99c47b104aa3c3984ecec51a1d8153ed09638253d56/WebTest-2.0.29.tar.gz
 Summary  : Helper to test WSGI applications
@@ -96,14 +96,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1529094649
+export SOURCE_DATE_EPOCH=1530368696
 python3 setup.py build -b py3
 
 %check
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-PYTHONPATH=%{buildroot}/usr/lib/python3.6/site-packages python3 setup.py test
+PYTHONPATH=%{buildroot}/usr/lib/python3.7/site-packages python3 setup.py test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/WebTest
