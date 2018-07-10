@@ -4,7 +4,7 @@
 #
 Name     : WebTest
 Version  : 2.0.29
-Release  : 46
+Release  : 47
 URL      : https://pypi.python.org/packages/94/de/8f94738be649997da99c47b104aa3c3984ecec51a1d8153ed09638253d56/WebTest-2.0.29.tar.gz
 Source0  : https://pypi.python.org/packages/94/de/8f94738be649997da99c47b104aa3c3984ecec51a1d8153ed09638253d56/WebTest-2.0.29.tar.gz
 Summary  : Helper to test WSGI applications
