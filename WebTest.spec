@@ -4,25 +4,17 @@
 #
 Name     : WebTest
 Version  : 2.0.32
-Release  : 49
+Release  : 50
 URL      : https://files.pythonhosted.org/packages/27/9f/9e74449d272ffbef4fb3012e6dbc53c0b24822d545e7a33a342f80131e59/WebTest-2.0.32.tar.gz
 Source0  : https://files.pythonhosted.org/packages/27/9f/9e74449d272ffbef4fb3012e6dbc53c0b24822d545e7a33a342f80131e59/WebTest-2.0.32.tar.gz
 Summary  : Helper to test WSGI applications
 Group    : Development/Tools
 License  : MIT
-Requires: WebTest-python3
-Requires: WebTest-license
-Requires: WebTest-python
-Requires: PasteDeploy
-Requires: Sphinx
-Requires: WSGIProxy2
+Requires: WebTest-license = %{version}-%{release}
+Requires: WebTest-python = %{version}-%{release}
+Requires: WebTest-python3 = %{version}-%{release}
 Requires: WebOb
 Requires: beautifulsoup4
-Requires: coverage
-Requires: docutils
-Requires: nose
-Requires: pyquery
-Requires: python-mock
 Requires: six
 Requires: waitress
 BuildRequires : PasteDeploy
@@ -95,7 +87,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1538748072
+export SOURCE_DATE_EPOCH=1541280741
 python3 setup.py build
 
 %check
@@ -105,8 +97,8 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python3.7/site-packages python3 setup.py test
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/WebTest
-cp docs/license.rst %{buildroot}/usr/share/doc/WebTest/docs_license.rst
+mkdir -p %{buildroot}/usr/share/package-licenses/WebTest
+cp docs/license.rst %{buildroot}/usr/share/package-licenses/WebTest/docs_license.rst
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -117,7 +109,7 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/doc/WebTest/docs_license.rst
+/usr/share/package-licenses/WebTest/docs_license.rst
 
 %files python
 %defattr(-,root,root,-)
