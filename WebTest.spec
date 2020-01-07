@@ -4,7 +4,7 @@
 #
 Name     : WebTest
 Version  : 2.0.33
-Release  : 59
+Release  : 60
 URL      : https://files.pythonhosted.org/packages/a8/b0/ffc9413b637dbe26e291429bb0f6ed731e518d0cd03da28524a8fe2e8a8f/WebTest-2.0.33.tar.gz
 Source0  : https://files.pythonhosted.org/packages/a8/b0/ffc9413b637dbe26e291429bb0f6ed731e518d0cd03da28524a8fe2e8a8f/WebTest-2.0.33.tar.gz
 Summary  : Helper to test WSGI applications
