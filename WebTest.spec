@@ -4,7 +4,7 @@
 #
 Name     : WebTest
 Version  : 2.0.34
-Release  : 62
+Release  : 63
 URL      : https://files.pythonhosted.org/packages/2c/74/a0e63feee438735d628631e2b70d82280276a930637ac535479e5fad9427/WebTest-2.0.34.tar.gz
 Source0  : https://files.pythonhosted.org/packages/2c/74/a0e63feee438735d628631e2b70d82280276a930637ac535479e5fad9427/WebTest-2.0.34.tar.gz
 Summary  : Helper to test WSGI applications
@@ -42,17 +42,14 @@ BuildRequires : waitress-python
 Patch1: 0001-enable-test-require-for-nose-1.3.0.patch
 
 %description
-=======
 WebTest
-=======
-
-This wraps any WSGI application and makes it easy to send test
-requests to that application, without starting up an HTTP server.
-
-This provides convenient full-stack testing of applications written
-with any WSGI-compatible framework.
-
-Full docs can be found at https://docs.pylonsproject.org/projects/webtest/en/latest/
+        =======
+        
+        This wraps any WSGI application and makes it easy to send test
+        requests to that application, without starting up an HTTP server.
+        
+        This provides convenient full-stack testing of applications written
+        with any WSGI-compatible framework.
 
 %package license
 Summary: license components for the WebTest package.
@@ -76,7 +73,11 @@ python components for the WebTest package.
 Summary: python3 components for the WebTest package.
 Group: Default
 Requires: python3-core
-Provides: pypi(WebTest)
+Provides: pypi(webtest)
+Requires: pypi(beautifulsoup4)
+Requires: pypi(six)
+Requires: pypi(waitress)
+Requires: pypi(webob)
 
 %description python3
 python3 components for the WebTest package.
@@ -92,8 +93,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1582903160
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1583524678
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
