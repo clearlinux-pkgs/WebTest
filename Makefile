@@ -1,5 +1,5 @@
 PKG_NAME := WebTest
-URL = https://files.pythonhosted.org/packages/2c/74/a0e63feee438735d628631e2b70d82280276a930637ac535479e5fad9427/WebTest-2.0.34.tar.gz
+URL = https://files.pythonhosted.org/packages/97/87/73f7db7be3a33c5a7aa3772a4cdb309995dba28bddf7a41a56229f3b1507/WebTest-2.0.35.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
