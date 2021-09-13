@@ -1,16 +1,13 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
 PasteDeploy
-PasteDeploy-python
 WSGIProxy2
 WebOb
-WebOb-python
 beautifulsoup4
-beautifulsoup4-python
 coverage
 pyquery
+pytest
+pytest-cov
 python-mock
 six
-six-python
 waitress
-waitress-python

@@ -4,7 +4,7 @@
 #
 Name     : WebTest
 Version  : 3.0.0
-Release  : 76
+Release  : 77
 URL      : https://files.pythonhosted.org/packages/26/c8/8ffba1782700eb06e9b9169156698c6ba95c05b66cda3fc9e025b6b3b649/WebTest-3.0.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/26/c8/8ffba1782700eb06e9b9169156698c6ba95c05b66cda3fc9e025b6b3b649/WebTest-3.0.0.tar.gz
 Summary  : Helper to test WSGI applications
@@ -17,25 +17,17 @@ Requires: WebOb
 Requires: beautifulsoup4
 Requires: waitress
 BuildRequires : PasteDeploy
-BuildRequires : PasteDeploy-python
 BuildRequires : WSGIProxy2
 BuildRequires : WebOb
-BuildRequires : WebOb-python
 BuildRequires : beautifulsoup4
-BuildRequires : beautifulsoup4-python
 BuildRequires : buildreq-distutils3
 BuildRequires : coverage
-BuildRequires : pluggy
-BuildRequires : py-python
 BuildRequires : pyquery
 BuildRequires : pytest
+BuildRequires : pytest-cov
 BuildRequires : python-mock
 BuildRequires : six
-BuildRequires : six-python
-BuildRequires : tox
-BuildRequires : virtualenv
 BuildRequires : waitress
-BuildRequires : waitress-python
 
 %description
 WebTest
@@ -87,7 +79,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1631501566
+export SOURCE_DATE_EPOCH=1631501916
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -96,6 +88,11 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
+%check
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
+pytest
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
