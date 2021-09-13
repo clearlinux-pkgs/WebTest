@@ -1,22 +1,18 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
-nose
-coverage
-python-mock
 PasteDeploy
-WSGIProxy2
-pyquery
-six
-WebOb
-waitress
-beautifulsoup4
-nose-python
-coverage
-python-mock
 PasteDeploy-python
 WSGIProxy2
-pyquery
-six-python
+WebOb
 WebOb-python
-waitress-python
+beautifulsoup4
 beautifulsoup4-python
+coverage
+nose
+nose-python
+pyquery
+python-mock
+six
+six-python
+waitress
+waitress-python
