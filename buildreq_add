@@ -8,8 +8,6 @@ WebOb-python
 beautifulsoup4
 beautifulsoup4-python
 coverage
-nose
-nose-python
 pyquery
 python-mock
 six
